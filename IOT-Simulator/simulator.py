@@ -2,7 +2,7 @@ import random
 import time
 from azure.iot.device import IoTHubDeviceClient, Message
 
-CONNECTION_STRING = "HostName=iothub-smartwarehouse.azure-devices.net;DeviceId=Symulator1;SharedAccessKey=pgjMkGMyZNDA2Qh6ecW7Bv/R7P9cJgOhLxsiVpdaGIc="
+CONNECTION_STRING = "*"
 MSG_SND = '{{"temperature": {temperature}, "humidity": {humidity}}}'
 
 temperature = 20.0
