@@ -34,3 +34,6 @@ jobs:
           app-name: 'sw-iot-2506-backend-api'
           publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}
           package: './publish'
+
+      - name: List published files
+        run: ls -l ./publish
