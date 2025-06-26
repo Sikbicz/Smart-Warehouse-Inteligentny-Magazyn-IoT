@@ -23,10 +23,8 @@ jobs:
         with:
           dotnet-version: '8.0'
 
-      # Krok budowania i publikacji z POPRAWIONYMI ŚCIEŻKAMI
       - name: Build and publish .NET app
         run: |
-          # POPRAWKA: Zmieniono nazwę pliku .csproj na UserService.csproj
           dotnet restore InteligentnyMagazyn/UserService.csproj
           dotnet build InteligentnyMagazyn/UserService.csproj --configuration Release --no-restore
           dotnet publish InteligentnyMagazyn/UserService.csproj -c Release -o ./publish --no-build
