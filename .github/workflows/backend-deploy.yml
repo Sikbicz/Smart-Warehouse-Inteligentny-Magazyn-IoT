@@ -25,9 +25,9 @@ jobs:
 
       - name: Build and publish .NET app
         run: |
-          dotnet restore InteligentnyMagazyn/UserService.csproj
-          dotnet build InteligentnyMagazyn/UserService.csproj --configuration Release --no-restore
-          dotnet publish InteligentnyMagazyn/UserService.csproj -c Release -o ./publish --no-build
+          dotnet restore IOT-python-simulator/UserService/UserService.csproj
+          dotnet build IOT-python-simulator/UserService/UserService.csproj --configuration Release --no-restore
+          dotnet publish IOT-python-simulator/UserService/UserService.csproj -c Release -o ./publish --no-build
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
