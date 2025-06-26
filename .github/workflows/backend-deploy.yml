@@ -7,7 +7,7 @@ on:
     branches:
       - main
     paths:
-      - 'InteligentnyMagazyn/**'
+      - 'IOT-python-simulator/UserService/**'
       - '.github/workflows/backend-deploy.yml'
 
 jobs:
