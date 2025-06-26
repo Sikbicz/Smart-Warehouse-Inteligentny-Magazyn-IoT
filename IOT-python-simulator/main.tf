@@ -19,7 +19,7 @@ data "azurerm_client_config" "current" {}
 # Definicja zmiennych
 variable "resource_group_name" {
   description = "Nazwa grupy zasobów."
-  default     = "smartwarehouse-rg"
+  default     = "smartwarehouse-"
 }
 
 variable "location" {
@@ -65,7 +65,7 @@ resource "azurerm_mssql_database" "main" {
 
 # Krok 5: Utworzenie konta, bazy i kontenera Cosmos DB
 resource "azurerm_cosmosdb_account" "main" {
-  name                = "${var.base_name}-cosmos"
+  name                = "${var.base_name}-cosmo"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
   offer_type          = "Standard"
@@ -118,7 +118,7 @@ data "azurerm_iothub_shared_access_policy" "iothub_policy" {
 
 # Krok 7: Utworzenie Storage Account
 resource "azurerm_storage_account" "main" {
-  name                     = "swiot2506storage"
+  name                     = "siot2506storage"
   location                 = azurerm_resource_group.main.location
   resource_group_name      = azurerm_resource_group.main.name
   account_tier             = "Standard"
@@ -182,7 +182,7 @@ resource "azurerm_static_web_app" "frontend" {
 
 # Krok 11: Utworzenie Azure Key Vault
 resource "azurerm_key_vault" "main" {
-  name                = "${var.base_name}-keyvault"
+  name                = "${var.base_name}-keysvault"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
   tenant_id           = data.azurerm_client_config.current.tenant_id
