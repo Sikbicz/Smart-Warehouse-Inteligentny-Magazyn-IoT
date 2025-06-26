@@ -1,4 +1,3 @@
-#test1
 name: Build and Deploy .NET Backend
 
 on:
@@ -22,11 +21,11 @@ jobs:
         with:
           dotnet-version: '8.0'
 
-      - name: Build and publish .NET app
+      - name: Restore, Build, Publish .NET app
         run: |
           dotnet restore IOT-python-simulator/UserService/UserService.csproj
-          dotnet build IOT-python-simulator/UserService/UserService.csproj --configuration Release --no-restore
-          dotnet publish IOT-python-simulator/UserService/UserService.csproj -c Release -o ./publish --no-build
+          dotnet build IOT-python-simulator/UserService/UserService.csproj --configuration Release
+          dotnet publish IOT-python-simulator/UserService/UserService.csproj --configuration Release --output ./publish
 
       - name: Deploy to Azure Function App
         uses: Azure/functions-action@v1
