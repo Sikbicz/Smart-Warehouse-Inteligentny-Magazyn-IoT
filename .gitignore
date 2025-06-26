@@ -1,0 +1,13 @@
+# Pliki lokalnego stanu Terraform
+*.tfstate
+*.tfstate.*
+
+# Pliki tymczasowe i dostawcy Terraform
+.terraform/
+.terraform.lock.hcl
+crash.log
+*.tfvars
+
+# Pliki specyficzne dla systemów operacyjnych
+.DS_Store
+Thumbs.db
