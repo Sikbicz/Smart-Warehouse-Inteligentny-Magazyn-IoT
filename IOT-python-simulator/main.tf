@@ -139,13 +139,16 @@ resource "azurerm_application_insights" "main" {
   }
 }
 
-# Krok 9: Utworzenie aplikacji backendowej (.NET API)
+# Krok 9: Utworzenie APLIKACJI FUNKCJI (zamiast Web App)
+# To jest kluczowa zmiana, aby dopasować infrastrukturę do Twojego kodu.
 resource "azurerm_linux_function_app" "backend" {
-  name                = "${var.base_name}-backend-api" # Nazwa pozostaje ta sama
+  name                = "${var.base_name}-backend-api" # Nazwa URL pozostaje ta sama
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
   service_plan_id     = azurerm_service_plan.main.id
-  storage_account_name = azurerm_storage_account.main.name
+  
+  # Aplikacje Funkcji wymagają konta storage do zarządzania triggerami i logami
+  storage_account_name       = azurerm_storage_account.main.name
   storage_account_access_key = azurerm_storage_account.main.primary_access_key
 
   site_config {
@@ -154,14 +157,19 @@ resource "azurerm_linux_function_app" "backend" {
     }
   }
 
+  # Konfiguracja dla Azure Functions
   app_settings = {
+    # Podstawowe ustawienia dla aplikacji funkcji
+    "FUNCTIONS_WORKER_RUNTIME" = "dotnet-isolated"
+    "AzureWebJobsStorage"      = azurerm_storage_account.main.primary_connection_string
+
+    # Twoje dotychczasowe zmienne, które są nadal potrzebne
     "SqlConnectionString"                   = "Server=tcp:${azurerm_mssql_server.main.fully_qualified_domain_name},1433;Initial Catalog=${azurerm_mssql_database.main.name};User ID=${azurerm_mssql_server.main.administrator_login};Password=${azurerm_mssql_server.main.administrator_login_password};Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
     "CosmosDbConnectionString"              = azurerm_cosmosdb_account.main.connection_strings[0]
     "IoTHubConnection"                      = data.azurerm_iothub_shared_access_policy.iothub_policy.primary_connection_string
-    "AzureWebJobsStorage"                   = azurerm_storage_account.main.primary_connection_string
-    "DEPLOYMENT_STORAGE_CONNECTION_STRING"  = azurerm_storage_account.main.primary_connection_string
     "APPLICATIONINSIGHTS_CONNECTION_STRING" = azurerm_application_insights.main.connection_string
     "ASPNETCORE_ENVIRONMENT"                = "Production"
+    "WEBSITE_WEBDEPLOY_USE_SCM" = "true"
   }
 }
 
