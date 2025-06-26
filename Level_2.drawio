@@ -1,0 +1,154 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.9">
+  <diagram name="Page-1" id="sqgKExxTLfJr2XsGwPO1">
+    <mxGraphModel dx="-119" dy="198" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="OG8gn5iMKxCEzLJPPmox-4" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=8 8;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="2610" y="2230" width="920" height="560" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="Warehouse manager" c4Type="Worker" c4Description="Manager on site,responisble for acting fast" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="drQIs82g9xxdgHSHIDGh-17">
+          <mxCell style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="2820" y="1890" width="200" height="180" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Warehouse Admin" c4Type="Admin" c4Description="Remote Manager - needs to relay information to the rest of managment" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="drQIs82g9xxdgHSHIDGh-18">
+          <mxCell style="html=1;fontSize=11;dashed=0;whiteSpace=wrap;fillColor=#083F75;strokeColor=#06315C;fontColor=#ffffff;shape=mxgraph.c4.person2;align=center;metaEdit=1;points=[[0.5,0,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0]];resizable=0;" parent="1" vertex="1">
+            <mxGeometry x="3120" y="1890" width="200" height="180" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="drQIs82g9xxdgHSHIDGh-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="drQIs82g9xxdgHSHIDGh-17" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2920" y="2100" as="sourcePoint" />
+            <mxPoint x="3000" y="2230" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2920" y="2180" />
+              <mxPoint x="3000" y="2180" />
+              <mxPoint x="3000" y="2230" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="drQIs82g9xxdgHSHIDGh-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="drQIs82g9xxdgHSHIDGh-18" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="3120" y="2230" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3150" y="2180" />
+              <mxPoint x="3070" y="2180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <object placeholders="1" c4Name="Inventory Management System " c4Type="External system for stock control" c4Description="Description of external software system." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="drQIs82g9xxdgHSHIDGh-23">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=0;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="3730" y="2450" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="drQIs82g9xxdgHSHIDGh-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="drQIs82g9xxdgHSHIDGh-23" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="3180" y="2510" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="3180" y="2511" />
+              <mxPoint x="3730" y="2511" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <object placeholders="1" c4Name="SMS notification system" c4Type="Software System" c4Description="Sends a SMS, whenever system is trying to alert user" label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="drQIs82g9xxdgHSHIDGh-26">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#8C8496;fontColor=#ffffff;align=center;arcSize=10;strokeColor=#736782;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];" parent="1" vertex="1">
+            <mxGeometry x="3730" y="2300" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="drQIs82g9xxdgHSHIDGh-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="drQIs82g9xxdgHSHIDGh-26" target="drQIs82g9xxdgHSHIDGh-17" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3560" y="1820" />
+              <mxPoint x="3040" y="1820" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="drQIs82g9xxdgHSHIDGh-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="drQIs82g9xxdgHSHIDGh-26" target="drQIs82g9xxdgHSHIDGh-18" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3540" y="1820" />
+              <mxPoint x="3230" y="1820" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="drQIs82g9xxdgHSHIDGh-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="drQIs82g9xxdgHSHIDGh-26" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="3190" y="2510" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="3190" y="2511" />
+              <mxPoint x="3260" y="2511" />
+              <mxPoint x="3260" y="2360" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OG8gn5iMKxCEzLJPPmox-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="OG8gn5iMKxCEzLJPPmox-3" target="OG8gn5iMKxCEzLJPPmox-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <object placeholders="1" c4Name="Dashboard" c4Type="Software System" c4Description="Provides UI for users to monitor and manage warehouse conditions." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="OG8gn5iMKxCEzLJPPmox-3">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=0;strokeColor=#0D5091;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];imageWidth=200;" vertex="1" parent="1">
+            <mxGeometry x="2940" y="2250" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="API Backend" c4Type="Software System" c4Description="Handles business logic, receives sensor data, exposes REST API." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="OG8gn5iMKxCEzLJPPmox-6">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=0;strokeColor=#0D5091;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];imageWidth=200;" vertex="1" parent="1">
+            <mxGeometry x="2940" y="2450" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="IoT Device Gateway" c4Type="Software System" c4Description="Receives data from physical sensors, forwards to backend/API." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="OG8gn5iMKxCEzLJPPmox-9">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=0;strokeColor=#0D5091;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];imageWidth=200;" vertex="1" parent="1">
+            <mxGeometry x="2735" y="2630" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <object placeholders="1" c4Name="Database" c4Type="Software System" c4Description="Stores sensor readings, alert history, user data, etc." label="&lt;font style=&quot;font-size: 16px&quot;&gt;&lt;b&gt;%c4Name%&lt;/b&gt;&lt;/font&gt;&lt;div&gt;[%c4Type%]&lt;/div&gt;&lt;br&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px&quot;&gt;&lt;font color=&quot;#cccccc&quot;&gt;%c4Description%&lt;/font&gt;&lt;/div&gt;" id="OG8gn5iMKxCEzLJPPmox-10">
+          <mxCell style="rounded=1;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#1061B0;fontColor=#ffffff;align=center;arcSize=0;strokeColor=#0D5091;metaEdit=1;resizable=0;points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];imageWidth=200;" vertex="1" parent="1">
+            <mxGeometry x="3140" y="2630" width="240" height="120" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="OG8gn5iMKxCEzLJPPmox-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="OG8gn5iMKxCEzLJPPmox-9" target="OG8gn5iMKxCEzLJPPmox-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OG8gn5iMKxCEzLJPPmox-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="OG8gn5iMKxCEzLJPPmox-9" target="OG8gn5iMKxCEzLJPPmox-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2855" y="2510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OG8gn5iMKxCEzLJPPmox-21" value="Smart Warehouse IoT System" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="2610" y="2250" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OG8gn5iMKxCEzLJPPmox-23" value="Calls REST API for data/commands" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="2960" y="2390" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OG8gn5iMKxCEzLJPPmox-27" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="OG8gn5iMKxCEzLJPPmox-6" target="OG8gn5iMKxCEzLJPPmox-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3520" y="2545" as="sourcePoint" />
+            <mxPoint x="3250" y="2665" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3260" y="2540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OG8gn5iMKxCEzLJPPmox-29" value="Reads/writes sensor readings, alerts, users" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="3120" y="2590" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OG8gn5iMKxCEzLJPPmox-32" value="Sends seonsor data" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="2780" y="2560" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OG8gn5iMKxCEzLJPPmox-33" value="Sends SMS alert" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="3400" y="2340" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OG8gn5iMKxCEzLJPPmox-34" value="Gets updates inventory info" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="3380" y="2480" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OG8gn5iMKxCEzLJPPmox-35" value="Views current temperature/humidity" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="2820" y="2100" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OG8gn5iMKxCEzLJPPmox-38" value="Views &amp;amp; edits data" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="3140" y="2100" width="160" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
