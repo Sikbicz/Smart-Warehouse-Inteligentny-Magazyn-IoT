@@ -23,18 +23,17 @@ jobs:
         with:
           dotnet-version: '8.0'
 
+      # Krok budowania i publikacji z POPRAWIONYMI ŚCIEŻKAMI
       - name: Build and publish .NET app
         run: |
-          dotnet restore InteligentnyMagazyn/InteligentnyMagazyn.Api/InteligentnyMagazyn.Api.csproj
-          dotnet build InteligentnyMagazyn/InteligentnyMagazyn.Api/InteligentnyMagazyn.Api.csproj --configuration Release --no-restore
-          dotnet publish InteligentnyMagazyn/InteligentnyMagazyn.Api/InteligentnyMagazyn.Api.csproj -c Release -o ./publish --no-build
+          # POPRAWKA: Zmieniono nazwę pliku .csproj na UserService.csproj
+          dotnet restore InteligentnyMagazyn/UserService.csproj
+          dotnet build InteligentnyMagazyn/UserService.csproj --configuration Release --no-restore
+          dotnet publish InteligentnyMagazyn/UserService.csproj -c Release -o ./publish --no-build
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          # Nazwa Twojej aplikacji w Azure
           app-name: 'sw-iot-2506-backend-api'
-          # Sekret z profilem publikacji
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          # Folder, z którego wdrażamy
           package: './publish'

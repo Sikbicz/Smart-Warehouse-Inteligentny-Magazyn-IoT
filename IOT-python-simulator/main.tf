@@ -140,11 +140,13 @@ resource "azurerm_application_insights" "main" {
 }
 
 # Krok 9: Utworzenie aplikacji backendowej (.NET API)
-resource "azurerm_linux_web_app" "backend" {
-  name                = "${var.base_name}-backend-api"
+resource "azurerm_linux_function_app" "backend" {
+  name                = "${var.base_name}-backend-api" # Nazwa pozostaje ta sama
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
   service_plan_id     = azurerm_service_plan.main.id
+  storage_account_name = azurerm_storage_account.main.name
+  storage_account_access_key = azurerm_storage_account.main.primary_access_key
 
   site_config {
     application_stack {
