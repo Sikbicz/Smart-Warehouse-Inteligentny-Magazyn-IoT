@@ -19,7 +19,7 @@ This guide provides instructions for testing the various components of the Smart
 
 ## 1. Prerequisites
 
-Before you begin testing, ensure you have the following installed:
+Before you begin testing, ensure you have the following:
 
 *   **Backend Running:** Your Azure Functions backend application should be running locally (see instructions below).
 *   **Frontend Running:** Your React frontend application should be running locally (see instructions below).

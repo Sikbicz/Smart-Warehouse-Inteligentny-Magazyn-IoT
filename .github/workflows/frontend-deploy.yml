@@ -1,0 +1,47 @@
+name: Deploy Frontend to Azure Static Web Apps
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allows manual triggering
+
+env:
+  AZURE_STATIC_WEB_APP_NAME: <YOUR_STATIC_WEB_APP_NAME> # Replace with your Azure Static Web App name
+  AZURE_RESOURCE_GROUP: <YOUR_RESOURCE_GROUP_NAME> # Replace with your Azure Resource Group name
+  FRONTEND_PATH: 'Frontend' # Path to your frontend project, relative to repository root
+  API_PATH: 'Backend' # Path to your backend project, relative to repository root
+  OUTPUT_PATH: 'dist' # Output directory of your frontend build
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use a compatible Node.js version
+
+      - name: Install frontend dependencies
+        run: npm install
+        working-directory: ${{ env.FRONTEND_PATH }}
+
+      - name: Build frontend
+        run: npm run build
+        working-directory: ${{ env.FRONTEND_PATH }}
+
+      - name: Deploy to Azure Static Web Apps
+        uses: azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }} # This secret is automatically created by Azure
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integration
+          action: 'upload'
+          app_location: ${{ env.FRONTEND_PATH }} # App source code path
+          api_location: ${{ env.API_PATH }} # Api source code path
+          output_location: ${{ env.OUTPUT_PATH }} # Built app content directory
+          # Skip app build and api build as we build them manually above
+          skip_app_build: true
+          skip_api_build: true

@@ -1,38 +1,48 @@
-import time
 import random
-import requests
-import json
+import time
+from azure.iot.device import IoTHubDeviceClient, Message
 
-# Placeholder for IoT Device Simulator
-def simulate_sensor_data():
-    while True:
-        # Simulate 10 different devices (sensor_001 to sensor_010)
-        device_id_num = random.randint(1, 10)
-        device_id = f"sensor_{device_id_num:03d}" # Format with leading zeros
+CONNECTION_STRING = "HostName=iothub-smartwarehouse.azure-devices.net;DeviceId=Symulator1;SharedAccessKey=pgjMkGMyZNDA2Qh6ecW7Bv/R7P9cJgOhLxsiVpdaGIc="
+MSG_SND = '{{"temperature": {temperature}, "humidity": {humidity}}}'
+
+# Wartości początkowe
+temperature = 20.0
+humidity = 50.0
+
+def update_value_with_violation(current, min_value, max_value, max_delta, violation_chance=0.2, violation_amount=5.0):
+    if random.random() < violation_chance:
+        # Generuj wartość przekraczającą próg
+        violation = max_value + random.uniform(1.0, violation_amount)
+        print(f"*** CELOWE PRZEKROCZENIE PROGU: {round(violation, 2)} ***")
+        return violation
+    else:
+        delta = random.uniform(-max_delta, max_delta)
+        new_value = current + delta
+        return max(min_value, min(max_value, new_value))
+
+def main():
+    global temperature, humidity
+    try:
+        client = IoTHubDeviceClient.create_from_connection_string(CONNECTION_STRING)
+        print("Symulator uruchomiony. Wysyłam dane do chmury...")
         
-        temperature = round(random.uniform(15.0, 35.0), 2)
-        humidity = round(random.uniform(30.0, 70.0), 2)
-        timestamp = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-
-        data = {
-            "DeviceId": device_id,
-            "Temperature": temperature,
-            "Humidity": humidity,
-            "Timestamp": timestamp
-        }
-        print(f"Sending data: {data}")
-        
-        try:
-            response = requests.post("http://localhost:7071/api/SensorDataController", json=data)
-            print(f"Response Status Code: {response.status_code}")
-            print(f"Response Text: {response.text}")
-        except requests.exceptions.ConnectionError as e:
-            print(f"Connection Error: {e}")
-            print("Please ensure your Azure Functions backend is running locally.")
-        except Exception as e:
-            print(f"An unexpected error occurred: {e}")
-
-        time.sleep(5) # Send data every 5 seconds
+        while True:
+            # Używamy progów z Twojego kodu C# (temp: 25, humidity: 60)
+            temperature = update_value_with_violation(temperature, 15.0, 25.0, 0.3)
+            humidity = update_value_with_violation(humidity, 30.0, 60.0, 1.5) 
+            
+            msg_body = MSG_SND.format(temperature=round(temperature, 2), humidity=round(humidity, 2))
+            msg = Message(msg_body)
+            
+            print(f"Wysyłam: {msg_body}")
+            client.send_message(msg)
+            time.sleep(5)
+            
+    except ModuleNotFoundError:
+        print("\nBŁĄD: Brak biblioteki 'azure.iot.device'.")
+        print("Zainstaluj ją za pomocą polecenia: pip install azure-iot-device\n")
+    except Exception as e:
+        print(f"Wystąpił nieoczekiwany błąd: {e}")
 
 if __name__ == "__main__":
-    simulate_sensor_data()
+    main()
